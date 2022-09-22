@@ -11,7 +11,7 @@ load_dotenv()
 
 def create_app():
     app=Flask(__name__)
-    db_client=pymongo.MongoClient(os.environ.get("MONGO_URI"))
+    db_client=pymongo.MongoClient(os.environ.get("MONGODB_URL"))
     app.db=db_client.Microblog
 
     @app.route('/',methods=["GET","POST"])

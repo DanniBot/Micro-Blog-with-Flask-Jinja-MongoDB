@@ -10,7 +10,8 @@ load_dotenv()
 
 
 def create_app():
-    app=Flask(__name__)
+    app=Flask(__name__,template_folder='templates')
+    
     db_client=pymongo.MongoClient(os.environ.get("MONGODB_URL"))
     app.db=db_client.Microblog
 
